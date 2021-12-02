@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int broj, maxcif=0, maxprev=0, zbir=0, flag=0;
+    while(1)
+    {
+        if(scanf("%d", &broj))
+        {
+            zbir=0;
+           maxprev=maxcif;
+           maxcif=0;
+            for(int i=broj; i>0;i/=10)
+            {
+
+                zbir=zbir+i%10;
+
+                if(i%10>maxcif)
+                {
+                    maxcif=i%10;
+                }
+            }
+            if(flag==0)
+            {
+                printf("%d: %d\n", broj, zbir);
+                flag=1;
+            }
+            else
+            printf("%d: %d\n", broj, zbir+maxprev);
+            
+        }
+        else 
+        break;
+    }
+    return 0;
+}
