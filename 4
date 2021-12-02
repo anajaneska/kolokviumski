@@ -1,0 +1,35 @@
+
+    #include <stdio.h>
+
+int main()
+{
+    char znak;
+    int zbir=0;
+    int broj;
+    
+    while(1)
+    {
+        scanf("%c", &znak);
+        if(znak>='0' && znak<='9')
+        {
+            char znak1;
+            scanf("%c", &znak1);
+            
+            if(znak1>='0' && znak1<='9')
+            {
+                broj = (znak - 48) * 10 + znak1 - 48;
+                zbir+=broj;
+            }
+            else if (znak1 != '\n')
+            {
+                broj=znak-48;
+                zbir+=broj;
+            }
+        }
+        else  if(znak =='\n')
+        { printf("%d", zbir);
+            break;}
+    }
+   
+    return 0;
+}
