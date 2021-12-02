@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int z, a,b, brParovi=0, brZparovi=0, zbir=0;
+    scanf("%d", &z);
+    while(1)
+    {
+    scanf("%d %d",&a,&b);
+    if(a==0 && b==0) break;
+   
+       if(a+b==z)
+       {
+        brZparovi++;
+        brParovi++;
+        }
+    else{
+        brParovi++;
+    }
+    }
+    
+    printf("Vnesovte %d parovi od broevi chij zbir e %d\n", brZparovi,z);
+    printf("Procentot na parovi so zbir %d e %.2f%%", z, (float)brZparovi/brParovi*100);
+}
