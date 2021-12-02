@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int m,n, najmal, ima=1;
+    scanf("%d %d", &m, &n);
+    
+    for(int i=m;i<=n;i++)
+    {
+        ima=1;
+        for(int j=i;j>0;j/=10)
+        {
+            if(j%2!=0)
+            {
+                ima=0;
+                break;
+            }
+        }
+        if (ima==1)
+            {
+                printf("%d",i);
+                break;
+            }
+    }
+    
+    if(ima==0)
+    {
+        printf("NE");
+    }
+}
