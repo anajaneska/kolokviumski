@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, cifri=0, obraten=0;
+    scanf("%d", &n);
+    
+    if(n>9)
+    {
+        for(n--;n>0;n--)
+        {
+            obraten=0; 
+            cifri=0;
+            for(int j=n;j>0;j/=10)
+            {
+                obraten*=10;
+                obraten+=j%10;
+                cifri++;
+            }
+            if(obraten%cifri==0)
+            {
+                printf("%d", n);
+                break;
+            }
+        }
+    }
+    else
+    printf("Brojot ne e validen");
+}
