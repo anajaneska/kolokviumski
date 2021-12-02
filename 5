@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int br1, br2;
+    scanf("%d %d", &br1, &br2);
+    
+    if(br1<=0 || br2<=0)
+    {
+        printf("Invalid input");
+    }
+    else
+    {
+        if(br2>br1)
+        {
+            int temp=br2;
+            br2=br1;
+            br1=temp;
+        }
+        
+        br1/=10;
+        
+        while(br2>0)
+        {
+            if(br1%10 == br2%10)
+            {
+                br1/=100;
+                br2/=10;
+            }
+            else
+            {printf("NE");
+            return 0;}
+        }
+        printf("PAREN");
+    }
+    return 0;
+}
